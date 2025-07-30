@@ -67,13 +67,27 @@ mkdir $HOME/Code/learning
 # mkdir $HOME/Code/laravel
 
 # Clone Github repositories
-./.dotfiles/clone.sh
+$HOME/Documents/.dotfiles/clone.sh
 
 # Symlink the Mackup config file to the home directory
 # ln -s ./.mackup.cfg $HOME/.mackup.cfg
 
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Brew bundle for using brewfiles (Having to run this manually after as terminal needs to be restarted first for Brew to be a command)
+# Tap depricated. No longer needed command
+# brew tap Homebrew/bundle
+
+# Install softwares as per brewfile
+brew bundle --file=$HOME/Documents/.dotfiles/Brewfile.txt
+
+
+
 # Set macOS preferences - we will run this last because this will reload the shell
-source ./.dotfiles/.macos
+source $HOME/Documents/.dotfiles/.macos
+
+
 
 # Steps to get my prefered terminal on a mac
 # -------------------------------------------------------------------------------------------
